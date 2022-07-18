@@ -60,7 +60,7 @@ int main(int argc, char** argv)
                     result[i] = '.';
                     result[i + speed] = 'R';
                 }
-                else
+                else if ((i + speed) > s.length())
                     result[i] = '.';
 
                 //cout << "new pos i's R = " << i + speed << endl;
@@ -73,8 +73,9 @@ int main(int argc, char** argv)
                     result[i] = '.';
                     result[i - speed] = 'L';
                 }
-                else
+                else if (((i - speed) < 0))
                     result[i] = '.';
+
                 //cout << "new pos i's L = " << i - speed << endl;
             }
             else
@@ -84,5 +85,4 @@ int main(int argc, char** argv)
         }
         cout << result << endl;
     }
-    exit(0);
 }
